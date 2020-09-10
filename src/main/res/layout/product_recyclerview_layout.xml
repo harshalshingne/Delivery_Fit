@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="1dp"
+    android:background="@drawable/rounded_corner_background_light_purple_5dp"
+    android:padding="3dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/card_Constraint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_corner_background_white_5dp"
+        android:padding="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/product_ImageView"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:src="@drawable/background_rounded_bgc"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card_Constraint">
+
+        <TextView
+            style="@style/productAdd_Style"
+            android:id="@+id/addProductCount_TextView"
+            android:background="@drawable/rounded_corner_background_orange"
+            android:text="@string/add"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/productMinus_ImageView"
+            style="@style/productAdd_ButtonStyle"
+            android:background="@drawable/rounded_corner_left_background_white"
+            android:src="@drawable/minus_icon"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/addProductCount_TextView"
+            app:layout_constraintStart_toStartOf="@+id/addProductCount_TextView"
+            app:layout_constraintTop_toTopOf="@+id/addProductCount_TextView" />
+
+        <ImageView
+            android:id="@+id/productPlus_ImageView"
+            style="@style/productAdd_ButtonStyle"
+            android:background="@drawable/rounded_corner_right_background_white"
+            android:src="@drawable/plus_icon"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/addProductCount_TextView"
+            app:layout_constraintEnd_toEndOf="@+id/addProductCount_TextView"
+            app:layout_constraintTop_toTopOf="@+id/addProductCount_TextView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

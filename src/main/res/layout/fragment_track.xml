@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    tools:context=".Dashboard.track.TrackFragment">
+<TextView
+    android:id="@+id/trackCheckpoint_Textview"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/track_and_checkpoint"
+    android:gravity="center_horizontal"
+    android:padding="4dp"
+    android:textSize="@dimen/textM"
+    android:textColor="@color/black"
+    android:background="@color/white"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"/>
+    <FrameLayout
+        android:id="@+id/map_framelayout"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/trackCheckpoint_Textview">
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/map"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:name="com.google.android.gms.maps.SupportMapFragment"/>
+    </FrameLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/map_framelayout"
+        card_view:cardElevation="2dp"
+        card_view:cardUseCompatPadding="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/deliveryCaptain_TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="8dp"
+                android:text="(Delivery captain)"
+                android:textColor="@color/gray"
+                android:textStyle="normal"
+                app:layout_constraintBottom_toTopOf="@+id/captainName_TextView"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/captainName_TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="Thomas Brook"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/textSmall"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:id="@+id/captainProfile_ImageView"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginBottom="4dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/captainName_TextView" />
+
+            <!-- <androidx.cardview.widget.CardView
+                android:id="@+id/chat_Cardview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:background="@drawable/rounded_corner_background_white"
+
+
+
+            </androidx.cardview.widget.CardView>-->
+            <ImageView
+                android:id="@+id/chat_ImagButton"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="8dp"
+                android:padding="2dp"
+                android:src="@drawable/ic_chat_icon"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/call_ImagButton" />
+
+            <ImageView
+                android:id="@+id/call_ImagButton"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:src="@drawable/ic_baseline_call_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!--<androidx.cardview.widget.CardView
+                android:id="@+id/call_Cardview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_corner_background_white"
+                >
+
+
+            </androidx.cardview.widget.CardView>-->
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView"
+        card_view:cardElevation="2dp"
+        card_view:cardUseCompatPadding="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/tips_Constraint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="29dp"
+                android:text="Tips"
+                android:textColor="@color/dark_gray"
+                android:textSize="@dimen/textM"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/tips_RecyclerView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="9dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:listitem="@layout/tips_recycler_lyaout" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <FrameLayout
+        android:id="@+id/flagMap_framelayout"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_marginTop="4dp"
+        android:background="#faf3dd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView2">
+        <!--<androidx.fragment.app.FragmentContainerView
+            android:id="@+id/flagMap"
+            android:name="com.example.delivery_fit.Dashboard.track.MapFlagFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />-->
+        <include layout="@layout/layout_progressbar_flag"/>
+    </FrameLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
